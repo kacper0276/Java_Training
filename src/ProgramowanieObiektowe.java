@@ -54,6 +54,7 @@ class PoleStatic {
         return nextId++;
     }
 
+    // Wtedy bez this
     PoleStatic() {
         id = PoleStatic.genNextId();
     }
