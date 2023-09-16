@@ -21,6 +21,10 @@ class SecondClass extends MainClass {
     public void printInfo() {
         System.out.println("Second");
     }
+
+    public void funForSec() {
+        System.out.println("DWA");
+    }
 }
 
 class ThirdClass extends SecondClass {
@@ -35,6 +39,9 @@ class ThirdClass extends SecondClass {
     }
 }
 
+// Rzutowanie między referencją jednej klasy na referencję innej
+// Konwersję taką robi się, gdy został zgubiony typ danej zmiennej
+
 public class Polimorfizm {
     public static void main(String[] args) {
         // Do obiektu z klasy MainClass przypisano SecondClass
@@ -46,6 +53,22 @@ public class Polimorfizm {
 
         mainclass.printInfo();
         thirdClass.printInfo();
+
+        MainClass mainArray[] = new MainClass[10];
+        mainArray[0] = new SecondClass("dwa");
+        mainArray[0].printInfo();
+        mainArray[1] = new MainClass("Main");
+        mainArray[1].printInfo();
+
+        // Zgubiony typ
+        // mainArray[0].funForSec();
+
+        // Rzutowanie
+        if(mainArray[0] instanceof SecondClass) {
+            SecondClass sec = (SecondClass) mainArray[0];
+            sec.funForSec();
+        }
+
 
 //        Błąd
 //        ThirdClass errorType = new MainClass("ASD");
