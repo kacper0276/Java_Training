@@ -20,5 +20,9 @@ public class Interfejsy {
 
         InnyInterface d = inuzycie;
         System.out.println(d.getNumWheels());
+
+        // Statyczne stałe
+        InterfejsyStatyczneUzycie instatic = new InterfejsyStatyczneUzycie();
+        instatic.getWingsspan();
     }
 }
