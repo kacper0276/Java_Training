@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <!--/*/ <th:block th:include="fragments/general.html :: headerfiles"/> /*/-->
+    <title th:text="${title}"></title>
+</head>
+<body>
+    <p>User: <span th:text="${user.id}"></span></p>
+    <div>
+        <p>Name: <span th:text="${user.name}"></span></p>
+        <p>Surname: <span th:text="${user.surname}"></span></p>
+        <p>Email: <span th:text="${user.email}"></span></p>
+        <p>City: <span th:text="${user.city}"></span></p>
+    </div>
+    <div th:replace="fragments/language.html :: language"></div>
+    <footer th:replace="fragments/general.html :: footer(company='example', year='2023')"></footer>
+</body>
+</html>
